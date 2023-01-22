@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
     spec.authors      = { "Rodrigo Scroferneker" => "rodrigo.scroferneker@gmail.com" }
     spec.platforms    = { :ios => "12.0" }
-    spec.source = { :git => "https://github.com/rodrigofranzoi/LotteryManagerSDK.git", :branch => 'main' }
+    spec.source = { :git => "https://github.com/rodrigofranzoi/LotteryManagerSDK.git", :tag => spec.version }
     spec.swift_version = '4.0'
   
     # spec.ios.vendored_library = '*.a'
