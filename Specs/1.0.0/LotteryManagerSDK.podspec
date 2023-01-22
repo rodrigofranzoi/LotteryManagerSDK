@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
     spec.license      =  { :type => 'Apache License 2.0', :file => 'LICENSE.txt' }
   
     spec.authors      = { "Rodrigo Scroferneker" => "rodrigo.scroferneker@gmail.com" }
-    spec.platforms    = { :ios => "10.0" }
+    spec.platforms    = { :ios => "12.0" }
     spec.source = { :git => "https://github.com/rodrigofranzoi/LotteryManagerSDK.git", :tag => "development"}
     spec.swift_version = '4.0'
   
