@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
     spec.name         = "LotteryManagerSDK"
     spec.version      = "1.0.0"
-    spec.summary      = "Lottery manager sdk in Swift."
+    spec.summary      = "Lottery manager sdk in Swift but this is not description."
   
     spec.description  = "Lottery manager sdk in Swift."
     spec.homepage     = "https://github.com/rodrigofranzoi/LotteryManagerSDK"
@@ -11,8 +11,7 @@ Pod::Spec.new do |spec|
   
     spec.authors      = { "Rodrigo Scroferneker" => "rodrigo.scroferneker@gmail.com" }
     spec.platforms    = { :ios => "10.0" }
-    spec.source           = { :http => 'https://github.com/sicpa-dlab/didcomm-rust/releases/download/v0.3.4/didcomm-swift-0.3.4.tar.gz'}
-    spec.source = { :git => "https://github.com/rodrigofranzoi/LotteryManagerSDK", :tag => "#{spec.version}"}
+    spec.source = { :git => "https://github.com/rodrigofranzoi/LotteryManagerSDK.git", :tag => "development"}
     spec.swift_version = '4.0'
   
     # spec.ios.vendored_library = '*.a'
