@@ -20,8 +20,8 @@ jobs:
     - name: CocoaPod Install
       run: pod install
     - name: Build
-      run: xcodebuild -workspace LotteryManagerSDK.xcworkspace -scheme LotteryManagerSDK -destination 'name=iPhone 12' build
+      run: xcodebuild -workspace LotteryManagerSDK.xcworkspace -scheme LotteryManagerSDK build
       # run: xcodebuild -workspace MegaSena.xcworkspace -scheme MegaSena -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12'
     - name: Test
-      run: xcodebuild -workspace LotteryManagerSDK.xcworkspace -scheme LotteryManagerSDK -destination 'name=iPhone 12' test
+      run: xcodebuild -workspace LotteryManagerSDK.xcworkspace -scheme LotteryManagerSDKTests test
       #run: xcodebuild -workspace MegaSena.xcworkspace -scheme MegaSena # -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' test
