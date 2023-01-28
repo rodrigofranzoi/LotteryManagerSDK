@@ -23,7 +23,7 @@ public protocol LMGameModelProtocol: LMRulesProtocol {
 }
 
 extension LMGameModelProtocol {
-    func isValid(form: GameFormModelType) -> Bool {
+    public func isValid(form: GameFormModelType) -> Bool {
         switch self.gameRules {
         case .DozenContest(let rules):
             guard let dozens = form.dozens else { return false }

@@ -10,8 +10,8 @@ import Foundation
 
 // Structure of a collection of games that is played only once according with its number
 public struct LMUniqueGameDataModel: Codable {
-    let id: String
-    var contests: [LMContest]
+    public let id: String
+    public var contests: [LMContest]
     
     public init(id: String, contests: [LMContest]) {
         self.id = id
