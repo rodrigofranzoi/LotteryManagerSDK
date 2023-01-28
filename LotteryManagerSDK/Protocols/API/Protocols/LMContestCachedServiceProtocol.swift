@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LMContestCachedServiceProtocol {
+public protocol LMContestCachedServiceProtocol {
     var mainSource: LMContestServiceProtocol { get }
     var cache: LMContestFileManagerProtocol { get }
     var lastGameDefaults: LMLastGameDefaultsProtocol { get }

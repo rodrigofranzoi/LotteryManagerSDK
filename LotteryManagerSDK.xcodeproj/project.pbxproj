@@ -35,8 +35,6 @@
 		C2C8CEE2297B1FF4006413DB /* LMContestFileManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */; };
 		C2C8CEE3297B1FF4006413DB /* LMContestCachedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC3297B1FF4006413DB /* LMContestCachedService.swift */; };
 		C2C8CEE4297B1FF4006413DB /* LMFetchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC4297B1FF4006413DB /* LMFetchStatus.swift */; };
-		C2C8CEE5297B1FF4006413DB /* LMContestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC5297B1FF4006413DB /* LMContestService.swift */; };
-		C2C8CEE6297B1FF4006413DB /* LMContestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC6297B1FF4006413DB /* LMContestAPI.swift */; };
 		C2C8CEE7297B1FF4006413DB /* LMContestServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC8297B1FF4006413DB /* LMContestServiceProtocol.swift */; };
 		C2C8CEE8297B1FF4006413DB /* LMContestServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC9297B1FF4006413DB /* LMContestServiceType.swift */; };
 		C2C8CEE9297B1FF4006413DB /* LMContestAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECA297B1FF4006413DB /* LMContestAPIProvider.swift */; };
@@ -92,8 +90,6 @@
 		C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestFileManagerProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEC3297B1FF4006413DB /* LMContestCachedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestCachedService.swift; sourceTree = "<group>"; };
 		C2C8CEC4297B1FF4006413DB /* LMFetchStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFetchStatus.swift; sourceTree = "<group>"; };
-		C2C8CEC5297B1FF4006413DB /* LMContestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestService.swift; sourceTree = "<group>"; };
-		C2C8CEC6297B1FF4006413DB /* LMContestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestAPI.swift; sourceTree = "<group>"; };
 		C2C8CEC8297B1FF4006413DB /* LMContestServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestServiceProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEC9297B1FF4006413DB /* LMContestServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestServiceType.swift; sourceTree = "<group>"; };
 		C2C8CECA297B1FF4006413DB /* LMContestAPIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestAPIProvider.swift; sourceTree = "<group>"; };
@@ -291,8 +287,6 @@
 			children = (
 				C2C8CEC3297B1FF4006413DB /* LMContestCachedService.swift */,
 				C2C8CEC4297B1FF4006413DB /* LMFetchStatus.swift */,
-				C2C8CEC5297B1FF4006413DB /* LMContestService.swift */,
-				C2C8CEC6297B1FF4006413DB /* LMContestAPI.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -510,11 +504,9 @@
 				C2C8CED4297B1FF4006413DB /* LMGameModelType.swift in Sources */,
 				C2C8CEDF297B1FF4006413DB /* LMContestsFileManagerType.swift in Sources */,
 				C2C8CEEC297B1FF4006413DB /* LMKeyGenerator.swift in Sources */,
-				C2C8CEE5297B1FF4006413DB /* LMContestService.swift in Sources */,
 				C2C8CEDD297B1FF4006413DB /* LMGameFileManager.swift in Sources */,
 				C2C8CED8297B1FF4006413DB /* LotteryConfigurator.swift in Sources */,
 				C2C8CEE8297B1FF4006413DB /* LMContestServiceType.swift in Sources */,
-				C2C8CEE6297B1FF4006413DB /* LMContestAPI.swift in Sources */,
 				C2C8CEEB297B1FF4006413DB /* LMSourceAPIType.swift in Sources */,
 				C2C8CED2297B1FF4006413DB /* LMRecurrentDataModel.swift in Sources */,
 			);

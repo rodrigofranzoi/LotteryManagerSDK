@@ -8,9 +8,9 @@
 
 import Foundation
 
-class LMLastGameDefaults: LMLastGameDefaultsProtocol {
+public class LMLastGameDefaults: LMLastGameDefaultsProtocol {
     private static let lastGameNumberKey = "LMLastGameNumberKey-"
-    var apiProtocol: LMSourceAPIType
+    public var apiProtocol: LMSourceAPIType
     
     public init(apiProtocol: LMSourceAPIType) {
         self.apiProtocol = apiProtocol

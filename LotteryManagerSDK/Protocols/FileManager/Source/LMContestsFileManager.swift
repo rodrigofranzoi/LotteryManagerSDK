@@ -8,11 +8,11 @@
 
 import Foundation
 
-class LMContestsFileManager: LMContestsFileManagerType {
+public class LMContestsFileManager: LMContestsFileManagerType {
 
-    internal var apiProtocol: LMSourceAPIType
-    internal var apiProvider: LMContestAPIProvider
-    internal var fileProvider: LMFileProvider
+    public var apiProtocol: LMSourceAPIType
+    public var apiProvider: LMContestAPIProvider
+    public var fileProvider: LMFileProvider
     
     init(apiProtocol: LMSourceAPIType,
          apiProvider: LMContestAPIProvider,
@@ -22,7 +22,7 @@ class LMContestsFileManager: LMContestsFileManagerType {
         self.apiProtocol = apiProtocol
     }
     
-    func addContest<T>(contest: T) where T : LMPersistenceType {
+    public func addContest<T>(contest: T) where T : LMPersistenceType {
         getContests { (contests: [T]) in
             var newContests = contests
             if let index = contests.firstIndex(where: { savedContest in savedContest.contestNumber == contest.contestNumber}) {
@@ -38,14 +38,14 @@ class LMContestsFileManager: LMContestsFileManagerType {
         }
     }
     
-    func getLastContest<T>(completion: @escaping (T?) -> Void) where T: LMPersistenceType {
+    public func getLastContest<T>(completion: @escaping (T?) -> Void) where T: LMPersistenceType {
         getContests { (contests: [T]) in
             let contest = contests.max { $0.contestNumber < $1.contestNumber }
             completion(contest)
         }
     }
     
-    func saveContests<T>(contests: [T]) where T: LMPersistenceType {
+    public func saveContests<T>(contests: [T]) where T: LMPersistenceType {
         self.fileProvider.saveObjects(
             url: apiProtocol.name + "-cache.json",
             objects: contests,
@@ -53,7 +53,7 @@ class LMContestsFileManager: LMContestsFileManagerType {
             onFailure: nil)
     }
     
-    func getContests<T>(completion: @escaping ([T]) -> Void) where T: LMPersistenceType {
+    public func getContests<T>(completion: @escaping ([T]) -> Void) where T: LMPersistenceType {
         fileProvider.callForList(url: apiProtocol.name + "-cache.json") { (status: LMFetchStatus<[T]>) in
             switch status {
             case .succeeded(let contests):
