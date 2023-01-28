@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: DecodableOutput & LMContestServiceType {
+class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: LMDecodableOutput & LMContestServiceType {
 
     var mainSource: LMContestServiceProtocol
     var cache: LMContestFileManagerProtocol
@@ -22,7 +22,7 @@ class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: Decodab
         self.lastGameDefaults = lastGameDefaults
     }
 
-    func fetchLottery<T>(contestNumber: Int? = nil, completion: @escaping (LMFetchStatus<T>)->Void) where T: DecodableOutput & LMContestServiceType {
+    func fetchLottery<T>(contestNumber: Int? = nil, completion: @escaping (LMFetchStatus<T>)->Void) where T: LMDecodableOutput & LMContestServiceType {
         cache.getContests { [weak self] (cachedContests: [T]) in
             if let contestNumber = contestNumber,
                let game = cachedContests.first(where: { $0.contestNumber == contestNumber}),
@@ -62,7 +62,7 @@ class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: Decodab
         }
     }
  
-    func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: DecodableOutput & LMContestServiceType{
+    func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: LMDecodableOutput & LMContestServiceType {
         let group = DispatchGroup()
         var games: [LMFetchStatus<T>] =  Array(repeating: .other(.api), count: contests.count)
         for (index, number) in contests.enumerated() {

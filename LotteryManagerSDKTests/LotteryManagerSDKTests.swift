@@ -10,7 +10,10 @@ import XCTest
 
 final class LotteryManagerSDKTests: XCTestCase {
     
-    let sut = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1"], extraDozen: ["5"])))
+    let sut1 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1"], extraDozen: ["5"])))
+    let sut2 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1", "2"], extraDozen: ["5"])))
+    let sut3 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1"], extraDozen: ["4", "5"])))
+    let sut4 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1", "2"], extraDozen: ["4", "5"])))
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,10 +24,12 @@ final class LotteryManagerSDKTests: XCTestCase {
     }
 
     func testExample() throws {
-        let mock = SimpleLotteryMock()
+        let mock = SimpleLotteryConfigMock()
         
-        XCTAssertEqual(mock.getPrice(for: sut.type), 3.0)
-        
+        XCTAssertEqual(mock.getPrice(for: sut1.type), 2.0)
+        XCTAssertEqual(mock.getPrice(for: sut2.type), 3.0)
+        XCTAssertEqual(mock.getPrice(for: sut3.type), 4.0)
+        XCTAssertEqual(mock.getPrice(for: sut4.type), 5.0)
     }
 
     func testPerformanceExample() throws {

@@ -14,7 +14,7 @@ public enum LMGameType: Codable {
     case extraGame(LMExtraValueGame)
 }
 
-extension LMGameType {
+public extension LMGameType {
     private enum CodingKeys: String, CodingKey {
         case normal
         case extraDozen

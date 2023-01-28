@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol LMContestAPIProvider {
-    func callForObject<T: DecodableOutput>(url: URL, completion: @escaping (LMFetchStatus<T>) -> Void)
-    func callForList<T: DecodableOutput>(url: URL, completion: @escaping (LMFetchStatus<[T]>) -> Void)
+    func callForObject<T: LMDecodableOutput>(url: URL, completion: @escaping (LMFetchStatus<T>) -> Void)
+    func callForList<T: LMDecodableOutput>(url: URL, completion: @escaping (LMFetchStatus<[T]>) -> Void)
 }

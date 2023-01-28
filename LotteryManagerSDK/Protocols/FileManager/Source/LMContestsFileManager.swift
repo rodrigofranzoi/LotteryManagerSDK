@@ -15,7 +15,7 @@ class LMContestsFileManager: LMContestsFileManagerType {
     internal var fileProvider: LMFileProvider
     
     init(apiProtocol: LMSourceAPIType,
-         apiProvider: LMContestAPIProvider = LMContestAPI(),
+         apiProvider: LMContestAPIProvider,
          fileProvider: LMFileProvider = LMCoreFileProvider()) {
         self.fileProvider = fileProvider
         self.apiProvider = apiProvider

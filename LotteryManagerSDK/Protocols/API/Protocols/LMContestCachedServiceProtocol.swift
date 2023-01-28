@@ -13,6 +13,6 @@ protocol LMContestCachedServiceProtocol {
     var cache: LMContestFileManagerProtocol { get }
     var lastGameDefaults: LMLastGameDefaultsProtocol { get }
     
-    func fetchLottery<T>(contestNumber: Int?, completion: @escaping (LMFetchStatus<T>)->Void) where T: DecodableOutput & LMContestServiceType
-    func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: DecodableOutput & LMContestServiceType
+    func fetchLottery<T>(contestNumber: Int?, completion: @escaping (LMFetchStatus<T>)->Void) where T: LMDecodableOutput & LMContestServiceType
+    func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: LMDecodableOutput & LMContestServiceType
 }

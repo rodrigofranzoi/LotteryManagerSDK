@@ -8,15 +8,27 @@
 import Foundation
 import LotteryManagerSDK
 
-class SimpleLotteryMock: LMConfigurator {
+class SimpleLotteryConfigMock: LMConfigurator {
+    
+    static let minDozens: Int = 1
+    static let maxDozens: Int = 2
+    static let dozensTotalCount: Int = 50
+    
+    static let minDozensExtra: Int = 1
+    static let maxDozensExtra: Int = 2
+    static let dozensExtraTotalCount: Int = 6
+    
     let dummyId: String = "1234"
     let dozens1: [String] = ["1"]
     let dozens2: [String] = ["5"]
     
+    
+    // UI REQUIRED FUNCTION
     func isValid(form: LotteryManagerSDK.GameFormModelType) -> Bool {
         true
     }
 
+    // UI REQUIRED FUNCTION
     func createGameModelType(form: LotteryManagerSDK.GameFormModelType) -> LotteryManagerSDK.LMGameModel {
         .init(id: dummyId, type: .extraDozen( .init(id: dummyId, dozens: dozens1, extraDozen: dozens2)))
     }
@@ -29,25 +41,62 @@ class SimpleLotteryMock: LMConfigurator {
         "www.google.com"
     }
     
-    var gameRules: LotteryManagerSDK.GameRulesType {
-        .DozenContest(DozenContestRules(minDozens: 1, maxDozens: 1, dozensTotalCount: 60))
+    var gameRules: GameRulesType {
+        .DozenContest(
+            DozenContestRules(
+                minDozens: Self.minDozens,
+                maxDozens: Self.maxDozens,
+                dozensTotalCount: Self.dozensTotalCount))
     }
     
-    var extraGameRules: LotteryManagerSDK.GameRulesType? {
-        .DozenContest(DozenContestRules(minDozens: 1, maxDozens: 1, dozensTotalCount: 60))
+    var extraGameRules: GameRulesType? {
+        .DozenContest(
+            DozenContestRules(
+                minDozens: Self.minDozensExtra,
+                maxDozens: Self.maxDozensExtra,
+                dozensTotalCount: Self.dozensExtraTotalCount))
     }
     
     var teimosinha: [Int] = [1]
-    var priceArray: [[Double]] = [[0.0, 2.0, 3.0]]
+    var priceArray: [[Double]] = [[2.0, 3.0],
+                                  [4.0, 5.0]]
     
     func getPrice(for game: LotteryManagerSDK.LMGameType) -> Double {
         switch game {
-        case .extraDozen(let extraDozen):
-            let first = dozens1.contains { $0 == extraDozen.dozens[0] } ? 1 : 0
-            let second = dozens2.contains { $0 == extraDozen.extraDozen[0] } ? 1 : 0
-            return priceArray[0][first + second]
+        case .extraDozen(let extraGame):
+            return priceArray[extraGame.extraDozen.count - Self.minDozensExtra][extraGame.dozens.count - Self.minDozens]
         default:
             fatalError("Should not be implemented")
         }
     }
+}
+
+
+struct SimpleLotteryResultMock: LMContestServiceType {
+    func getPrizeFor(games: [LotteryManagerSDK.LMGameType]) -> Double {
+        return 10.0
+    }
+    
+    var contestNumber: Int = 100
+    
+    var nextGameDate: String = "19/03/98"
+    
+    var gameDate: String = "19/04/96"
+    
+    var game: LotteryManagerSDK.LMGameType {
+        .extraDozen(LMExtraDozenGame(id: "simpleId", dozens: ["1", "2", "3", "4", "5", "6"], extraDozen: ["1", "6"]))
+    }
+    
+    func getPrizeFor(game: LotteryManagerSDK.LMGameType) -> Double {
+        switch game {
+        case .extraDozen:
+            return 15.0
+        default:
+            fatalError()
+        }
+    }
+    
+    var isCompleted: Bool = true
+    
+    
 }

@@ -43,7 +43,7 @@
 		C2C8CEEA297B1FF4006413DB /* LMContestCachedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECB297B1FF4006413DB /* LMContestCachedServiceProtocol.swift */; };
 		C2C8CEEB297B1FF4006413DB /* LMSourceAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECC297B1FF4006413DB /* LMSourceAPIType.swift */; };
 		C2C8CEEC297B1FF4006413DB /* LMKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECD297B1FF4006413DB /* LMKeyGenerator.swift */; };
-		C2C8CEF3297B245A006413DB /* DecodableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEF2297B2459006413DB /* DecodableOutput.swift */; };
+		C2C8CEF3297B245A006413DB /* LMDecodableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEF2297B2459006413DB /* LMDecodableOutput.swift */; };
 		DD76EA3E1B8F1DC35D2C42BE /* Pods_LotteryManagerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B131FCAA88D9973632D5F /* Pods_LotteryManagerSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +100,7 @@
 		C2C8CECB297B1FF4006413DB /* LMContestCachedServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestCachedServiceProtocol.swift; sourceTree = "<group>"; };
 		C2C8CECC297B1FF4006413DB /* LMSourceAPIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMSourceAPIType.swift; sourceTree = "<group>"; };
 		C2C8CECD297B1FF4006413DB /* LMKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMKeyGenerator.swift; sourceTree = "<group>"; };
-		C2C8CEF2297B2459006413DB /* DecodableOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableOutput.swift; sourceTree = "<group>"; };
+		C2C8CEF2297B2459006413DB /* LMDecodableOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMDecodableOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 				C2C8CEAD297B1FF4006413DB /* LMGameModelType.swift */,
 				C2C8CEAE297B1FF4006413DB /* LMPersistenceType.swift */,
 				C2C8CEAF297B1FF4006413DB /* LMContest.swift */,
-				C2C8CEF2297B2459006413DB /* DecodableOutput.swift */,
+				C2C8CEF2297B2459006413DB /* LMDecodableOutput.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -505,7 +505,7 @@
 				C2C8CED3297B1FF4006413DB /* LMUniqueGameDataModel.swift in Sources */,
 				C2C8CED6297B1FF4006413DB /* LMContest.swift in Sources */,
 				C2C8CECF297B1FF4006413DB /* LMExtraValueGame.swift in Sources */,
-				C2C8CEF3297B245A006413DB /* DecodableOutput.swift in Sources */,
+				C2C8CEF3297B245A006413DB /* LMDecodableOutput.swift in Sources */,
 				C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */,
 				C2C8CED4297B1FF4006413DB /* LMGameModelType.swift in Sources */,
 				C2C8CEDF297B1FF4006413DB /* LMContestsFileManagerType.swift in Sources */,

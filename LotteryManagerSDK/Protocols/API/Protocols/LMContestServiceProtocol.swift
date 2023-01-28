@@ -9,8 +9,6 @@
 import Foundation
 
 protocol LMContestServiceProtocol {
-    var apiProtocol: LMSourceAPIType { get }
-    
-    func fetchLottery<T>(contestNumber: Int?, completion: @escaping (LMFetchStatus<T>) -> Void) where T: DecodableOutput & LMContestServiceType
-    func fetchBundle<T>(numbers: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: DecodableOutput & LMContestServiceType
+    func fetchLottery<T>(contestNumber: Int?, completion: @escaping (LMFetchStatus<T>) -> Void) where T: LMDecodableOutput & LMContestServiceType
+    func fetchBundle<T>(numbers: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: LMDecodableOutput & LMContestServiceType
 }
