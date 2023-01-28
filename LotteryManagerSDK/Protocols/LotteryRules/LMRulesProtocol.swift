@@ -56,7 +56,7 @@ public struct DozenContestRules: DozenContestRulesType {
 }
 
 public enum GameRulesType {
-    case DozenContest(DozenContestRulesType)
+    case DozenContest(DozenContestRules)
     case SingleTicketContest
     case None
 }

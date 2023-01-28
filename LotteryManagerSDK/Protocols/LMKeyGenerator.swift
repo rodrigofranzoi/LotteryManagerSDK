@@ -5,6 +5,7 @@ public protocol LMKeyGeneratorProtocol {
 }
 
 public class LMKeyGenerator: LMKeyGeneratorProtocol {
+    public init() { }
     public func getRandom() -> String{
         return UUID().uuidString.lowercased()
     }
