@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
     spec.name         = "LotteryManagerSDK"
-    spec.version      = "1.0.4"
+    spec.version      = "1.0.3"
     spec.summary      = "Lottery manager sdk in Swift."
   
     spec.description  = "Lottery manager sdk in Swift but this is not description."

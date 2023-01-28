@@ -25,7 +25,7 @@ public extension LMGameType {
         case decoding(String)
     }
 
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         if let value = try? values.decode(LMNormalGame.self, forKey: .normal) {
             self = .normal(value)
@@ -42,7 +42,7 @@ public extension LMGameType {
         throw GameTypeCodingError.decoding("Failed to decode game! \(dump(values))")
     }
 
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
         case .normal(let game):

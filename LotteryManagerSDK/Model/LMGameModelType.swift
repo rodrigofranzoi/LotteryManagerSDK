@@ -28,7 +28,7 @@ public struct LMGameModel: LMGameModelType {
         self.id = try container.decode(String.self, forKey: .id)
     }
     
-    func getDozens() -> [String] {
+    public func getDozens() -> [String] {
         switch type {
         case .extraDozen(let extraDozen):
             return extraDozen.dozens
@@ -39,7 +39,7 @@ public struct LMGameModel: LMGameModelType {
         }
     }
     
-    func getExtraDozens() -> [String]? {
+    public func getExtraDozens() -> [String]? {
         switch type {
         case .extraDozen(let extraDozen):
             return extraDozen.extraDozen
@@ -48,7 +48,7 @@ public struct LMGameModel: LMGameModelType {
         }
     }
     
-    func getExtraValue() -> String? {
+    public func getExtraValue() -> String? {
         switch type {
         case .extraGame(let extraGame):
             return extraGame.extraValue
