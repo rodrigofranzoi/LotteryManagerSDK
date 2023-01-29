@@ -10,8 +10,8 @@ import Foundation
 
 // This define the behaviour of the lottery
 public protocol LMRulesProtocol {
-    var gameRules: GameRulesType { get }
-    var extraGameRules: GameRulesType? { get }
+    var gameRules: LMGameRulesType { get }
+    var extraGameRules: LMGameRulesType? { get }
     var teimosinha: [Int] { get }
     var priceArray: [[Double]] { get }
     
@@ -27,7 +27,7 @@ public extension LMRulesProtocol {
     }
 }
 
-public protocol DozenContestRulesType {
+public protocol LMDozenContestRulesType {
     var minDozens: Int { get }
     var maxDozens: Int { get }
     var dozensTotalCount: Int { get }
@@ -35,7 +35,7 @@ public protocol DozenContestRulesType {
 }
 
 
-public struct DozenContestRules: DozenContestRulesType {
+public struct LMDozenContestRules: LMDozenContestRulesType {
     public var minDozens: Int
     public var maxDozens: Int
     public var dozensTotalCount: Int
@@ -55,8 +55,8 @@ public struct DozenContestRules: DozenContestRulesType {
     }
 }
 
-public enum GameRulesType {
-    case DozenContest(DozenContestRules)
+public enum LMGameRulesType {
+    case DozenContest(LMDozenContestRules)
     case SingleTicketContest
     case None
 }
