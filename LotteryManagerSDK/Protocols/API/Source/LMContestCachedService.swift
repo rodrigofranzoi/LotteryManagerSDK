@@ -14,7 +14,7 @@ public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: 
     public var cache: LMContestFileManagerProtocol
     public var lastGameDefaults: LMLastGameDefaultsProtocol
     
-    init(mainSource: LMContestServiceProtocol,
+    public init(mainSource: LMContestServiceProtocol,
          cache: LMContestFileManagerProtocol,
          lastGameDefaults: LMLastGameDefaultsProtocol) {
         self.mainSource = mainSource

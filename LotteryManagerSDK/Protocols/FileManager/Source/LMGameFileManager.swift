@@ -36,7 +36,7 @@ public class LMGameFileManager: LMGameFileManagerType {
     private var uniqueGame: MutableProperty<LMUniqueGameDataModel>
     private var recurrentGame: MutableProperty<LMRecurrentDataModel>
     
-    init(apiProtocol: LMSourceAPIType,
+    public init(apiProtocol: LMSourceAPIType,
          fileProvider: LMFileProvider = LMCoreFileProvider(),
          idProvider: LMKeyGeneratorProtocol = LMKeyGenerator()) {
         self.idProvider = idProvider
