@@ -1,6 +1,9 @@
 import Foundation
 
 public class LMCoreFileProvider: LMFileProvider {
+    
+    public init() { }
+    
     private var urlBase: NSString {
         let dirs : [String] = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
         let dir = dirs[0] as NSString
