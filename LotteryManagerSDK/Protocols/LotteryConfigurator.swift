@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias LMConfigurator = LMRulesProtocol & LMGameModelProtocol  & LMSourceAPIType
+public typealias LMConfigurator = LMRulesProtocol & LMGameModelProtocol & LMSourceAPIType

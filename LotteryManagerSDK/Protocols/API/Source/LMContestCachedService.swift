@@ -67,7 +67,7 @@ public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: 
         var games: [LMFetchStatus<T>] =  Array(repeating: .other(.api), count: contests.count)
         for (index, number) in contests.enumerated() {
             group.enter()
-            fetchLottery(contestNumber: number)  { (status: LMFetchStatus<T>) in
+            fetchLottery(contestNumber: number) { (status: LMFetchStatus<T>) in
                 group.leave()
                 // Avoid return duplicates
                 games[index] = status

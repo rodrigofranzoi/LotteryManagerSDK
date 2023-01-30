@@ -8,17 +8,15 @@
 
 import Foundation
 
-public class LMContestsFileManager: LMContestsFileManagerType {
+public class LMContestsFileManager: LMContestFileManagerProtocol {
 
     public var apiProtocol: LMSourceAPIType
-    public var apiProvider: LMContestAPIProvider
     public var fileProvider: LMFileProvider
     
-    public init(apiProtocol: LMSourceAPIType,
-         apiProvider: LMContestAPIProvider,
-         fileProvider: LMFileProvider = LMCoreFileProvider()) {
+    public init(
+        apiProtocol: LMSourceAPIType,
+        fileProvider: LMFileProvider = LMCoreFileProvider()) {
         self.fileProvider = fileProvider
-        self.apiProvider = apiProvider
         self.apiProtocol = apiProtocol
     }
     

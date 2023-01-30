@@ -29,7 +29,6 @@
 		C2C8CEDC297B1FF4006413DB /* LMLastGameDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEB9297B1FF4006413DB /* LMLastGameDefaults.swift */; };
 		C2C8CEDD297B1FF4006413DB /* LMGameFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBA297B1FF4006413DB /* LMGameFileManager.swift */; };
 		C2C8CEDE297B1FF4006413DB /* LMFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBC297B1FF4006413DB /* LMFileProvider.swift */; };
-		C2C8CEDF297B1FF4006413DB /* LMContestsFileManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBD297B1FF4006413DB /* LMContestsFileManagerType.swift */; };
 		C2C8CEE0297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBE297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift */; };
 		C2C8CEE1297B1FF4006413DB /* LMGameModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBF297B1FF4006413DB /* LMGameModelProtocol.swift */; };
 		C2C8CEE2297B1FF4006413DB /* LMContestFileManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */; };
@@ -84,7 +83,6 @@
 		C2C8CEB9297B1FF4006413DB /* LMLastGameDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLastGameDefaults.swift; sourceTree = "<group>"; };
 		C2C8CEBA297B1FF4006413DB /* LMGameFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMGameFileManager.swift; sourceTree = "<group>"; };
 		C2C8CEBC297B1FF4006413DB /* LMFileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFileProvider.swift; sourceTree = "<group>"; };
-		C2C8CEBD297B1FF4006413DB /* LMContestsFileManagerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestsFileManagerType.swift; sourceTree = "<group>"; };
 		C2C8CEBE297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLastGameDefaultsProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEBF297B1FF4006413DB /* LMGameModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMGameModelProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestFileManagerProtocol.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				C2C8CEBC297B1FF4006413DB /* LMFileProvider.swift */,
-				C2C8CEBD297B1FF4006413DB /* LMContestsFileManagerType.swift */,
 				C2C8CEBE297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift */,
 				C2C8CEBF297B1FF4006413DB /* LMGameModelProtocol.swift */,
 				C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */,
@@ -502,7 +499,6 @@
 				C2C8CEF3297B245A006413DB /* LMDecodableOutput.swift in Sources */,
 				C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */,
 				C2C8CED4297B1FF4006413DB /* LMGameModelType.swift in Sources */,
-				C2C8CEDF297B1FF4006413DB /* LMContestsFileManagerType.swift in Sources */,
 				C2C8CEEC297B1FF4006413DB /* LMKeyGenerator.swift in Sources */,
 				C2C8CEDD297B1FF4006413DB /* LMGameFileManager.swift in Sources */,
 				C2C8CED8297B1FF4006413DB /* LotteryConfigurator.swift in Sources */,
