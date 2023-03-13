@@ -10,33 +10,74 @@ import XCTest
 
 final class LotteryManagerSDKTests: XCTestCase {
     
-    let sut1 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1"], extraDozen: ["5"])))
-    let sut2 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1", "2"], extraDozen: ["5"])))
-    let sut3 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1"], extraDozen: ["4", "5"])))
-    let sut4 = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1", "2"], extraDozen: ["4", "5"])))
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var configurator: LMConfigurator!
+    var simpleLottery: LMContestServiceType!
+    
+    override func setUp() {
+        super.setUp()
+        configurator = SimpleLotteryConfigurator()
+        simpleLottery = SimpleLotteryGame(concurso: 100,
+                                          data: "19/03/98",
+                                          proxData: "19/04/96",
+                                          rateioOn: false,
+                                          dezenas: ["19", "12", "40", "42", "45", "50"])
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        let mock = SimpleLotteryConfigMock()
+    
+    func testGetPrize() throws {
         
-        XCTAssertEqual(mock.getPrice(for: sut1.type), 2.0)
-        XCTAssertEqual(mock.getPrice(for: sut2.type), 3.0)
-        XCTAssertEqual(mock.getPrice(for: sut3.type), 4.0)
-        XCTAssertEqual(mock.getPrice(for: sut4.type), 5.0)
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let sut = SimpleLotteryGame(concurso: 100,
+                                          data: "19/03/98",
+                                          proxData: "19/04/96",
+                                          rateioOn: false,
+                                          dezenas: ["19", "12", "40", "42", "45", "50"])
+        
+        let list = makeListLMGameType()
+        
+        for (index, game) in list.enumerated() {
+            XCTAssertEqual(sut.getPrizeFor(game: game), Double(index))
         }
     }
-
+    
+    func testValidForm() throws {
+        let form = LMFormMock(dozens: ["01", "12", "40", "42", "45", "60"], teimosinha: 1, number: 100, isRecurrent: false)
+        let form1 = LMFormMock(dozens: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"], teimosinha: 1, number: 100, isRecurrent: false)
+        let sut = SimpleLotteryConfigurator()
+        
+        XCTAssertTrue(sut.isValid(form: form))
+        XCTAssertTrue(sut.isValid(form: form1))
+    }
+    
+    func testInvalidForm() throws {
+        let form1 = LMFormMock(dozens: ["19", "12", "40", "42", "45"], teimosinha: 1, number: 100, isRecurrent: false)
+        let form2 = LMFormMock(dozens: ["19", "12", "40", "42", "50", "90"], teimosinha: 1, number: 100, isRecurrent: false)
+        let form3 = LMFormMock(dozens: ["00", "12", "40", "42", "50", "51"], teimosinha: 1, number: 100, isRecurrent: false)
+        let form4 = LMFormMock(dozens: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16"], teimosinha: 1, number: 100, isRecurrent: false)
+        
+        let sut = SimpleLotteryConfigurator()
+        
+        XCTAssertFalse(sut.isValid(form: form1))
+        XCTAssertFalse(sut.isValid(form: form2))
+        XCTAssertFalse(sut.isValid(form: form3))
+        XCTAssertFalse(sut.isValid(form: form4))
+    }
+    
+    func makeListLMGameType() -> [LMGameType] {
+        let game6 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "42", "45", "50"]))
+        let game5 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "42", "45", "06"]))
+        let game4 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "42", "05", "06"]))
+        let game3 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "04", "05", "06"]))
+        let game2 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "03", "04", "05", "06"]))
+        let game1 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "02", "03", "04", "05", "06"]))
+        let game0 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["01", "02", "03", "04", "05", "06"]))
+        return [game0, game1, game2, game3, game4, game5, game6]
+    }
 }
+
+

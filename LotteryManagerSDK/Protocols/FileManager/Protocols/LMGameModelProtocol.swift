@@ -30,7 +30,18 @@ extension LMGameModelProtocol {
             guard let dozens = form.dozens else { return false }
             if rules.minDozens > dozens.count { return false }
             if rules.maxDozens < dozens.count { return false }
-        default: break
+            let set = Set(rules.range).map { $0 < 10 ? "0\($0)" : "\($0)"}
+            if !Set(dozens).isSubset(of: set) { return false }
+        case .MultipleDozens(let rules):
+            for (index, rule) in rules.enumerated() {
+                guard let dozens = form.multipleDozens else { return false }
+                if rule.minDozens > dozens[index].count { return false }
+                if rule.maxDozens < dozens[index].count { return false }
+                let set = Set(rule.range).map { $0 < 10 ? "0\($0)" : "\($0)"}
+                if !Set(dozens[index]).isSubset(of: set) { return false}
+            }
+        case .SingleTicketContest:
+            guard let _ = form.extraInput else { return false }
         }
         
         switch self.extraGameRules {
@@ -38,6 +49,8 @@ extension LMGameModelProtocol {
             guard let dozens = form.extraDozens else { return false }
             if rules.minDozens > dozens.count { return false }
             if rules.maxDozens < dozens.count { return false }
+            let set = Set(rules.range).map { $0 < 10 ? "0\($0)" : "\($0)"}
+            if !Set(dozens).isSubset(of: set) { return false}
         case .SingleTicketContest:
             guard let _ = form.extraInput else { return false }
         default: break

@@ -145,8 +145,6 @@ public class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    // MARK: Just for init
-    // MARK: This method should not be used, mark as private
     private func getRecurrent(completion: @escaping (LMRecurrentDataModel)->Void) {
         fileProvider.callForObject(url: recurrentId) { (status: LMFetchStatus<LMRecurrentDataModel>) in
             switch status {
@@ -159,8 +157,6 @@ public class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    // MARK: Just for init
-    // MARK: This method should not be used, mark as private
     private func getGames(completion: @escaping (LMUniqueGameDataModel)->Void) {
         fileProvider.callForObject(url: normalId) { (status: LMFetchStatus<LMUniqueGameDataModel>) in
             switch status {

@@ -10,6 +10,7 @@
 		6E754052553B337813A92026 /* Pods_LotteryManagerSDK_LotteryManagerSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605EB23EA6A6B7473C5AF630 /* Pods_LotteryManagerSDK_LotteryManagerSDKTests.framework */; };
 		C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */; };
 		C2943D4829BF6D4F00FD5D64 /* LMMultipleGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */; };
+		C2943D4A29BF836400FD5D64 /* LMFormMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4929BF836400FD5D64 /* LMFormMock.swift */; };
 		C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */; };
 		C2C8CE95297B1FBE006413DB /* LotteryManagerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */; };
 		C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE99297B1FBE006413DB /* LotteryManagerSDKTests.swift */; };
@@ -64,6 +65,7 @@
 		9ED3802C38750E10EE42FAF7 /* Pods-LotteryManagerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotteryManagerSDK.debug.xcconfig"; path = "Target Support Files/Pods-LotteryManagerSDK/Pods-LotteryManagerSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLotteryMock.swift; sourceTree = "<group>"; };
 		C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMMultipleGameType.swift; sourceTree = "<group>"; };
+		C2943D4929BF836400FD5D64 /* LMFormMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMFormMock.swift; sourceTree = "<group>"; };
 		C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LotteryManagerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C8CE8D297B1FBE006413DB /* LotteryManagerSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryManagerSDK.h; sourceTree = "<group>"; };
 		C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LotteryManagerSDK.docc; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */,
+				C2943D4929BF836400FD5D64 /* LMFormMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */,
+				C2943D4A29BF836400FD5D64 /* LMFormMock.swift in Sources */,
 				C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

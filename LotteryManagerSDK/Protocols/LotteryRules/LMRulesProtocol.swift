@@ -64,5 +64,4 @@ public enum LMGameRulesType {
     case MultipleDozens([LMDozenContestRules])
     case DozenContest(LMDozenContestRules)
     case SingleTicketContest
-    case None
 }
