@@ -11,6 +11,7 @@ import Foundation
 public protocol GameFormModelType {
     var dozens: [String]? { get }
     var extraDozens: [String]? { get }
+    var multipleDozens: [[String]]? { get }
     var extraInput: String? { get }
     var teimosinha: Int? { get }
     var number: Int? { get }

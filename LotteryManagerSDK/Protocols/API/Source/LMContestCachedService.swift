@@ -39,7 +39,7 @@ public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: 
                     if contestNumber == nil {
                         self?.lastGameDefaults.lastGameNumber = game.contestNumber
                     } else if let lastGameNumber = self?.lastGameDefaults.lastGameNumber,
-                              lastGameNumber > game.contestNumber {
+                              lastGameNumber < game.contestNumber {
                         self?.lastGameDefaults.lastGameNumber = game.contestNumber
                     }
                     return

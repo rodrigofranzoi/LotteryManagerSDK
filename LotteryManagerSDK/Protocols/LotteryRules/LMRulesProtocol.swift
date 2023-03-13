@@ -30,6 +30,7 @@ public extension LMRulesProtocol {
 public protocol LMDozenContestRulesType {
     var minDozens: Int { get }
     var maxDozens: Int { get }
+    var range: ClosedRange<Int> { get }
     var dozensTotalCount: Int { get }
     func getFooterLabel() -> String
 }
@@ -38,12 +39,16 @@ public protocol LMDozenContestRulesType {
 public struct LMDozenContestRules: LMDozenContestRulesType {
     public var minDozens: Int
     public var maxDozens: Int
-    public var dozensTotalCount: Int
+    public var range: ClosedRange<Int>
     
-    public init(minDozens: Int, maxDozens: Int, dozensTotalCount: Int) {
+    public var dozensTotalCount: Int {
+        range.count
+    }
+    
+    public init(minDozens: Int, maxDozens: Int, range: ClosedRange<Int>) {
         self.minDozens = minDozens
         self.maxDozens = maxDozens
-        self.dozensTotalCount = dozensTotalCount
+        self.range = range
     }
     
     public func getFooterLabel() -> String {
@@ -56,6 +61,7 @@ public struct LMDozenContestRules: LMDozenContestRulesType {
 }
 
 public enum LMGameRulesType {
+    case MultipleDozens([LMDozenContestRules])
     case DozenContest(LMDozenContestRules)
     case SingleTicketContest
     case None

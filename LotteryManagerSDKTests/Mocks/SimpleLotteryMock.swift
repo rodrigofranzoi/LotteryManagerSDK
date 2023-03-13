@@ -41,20 +41,21 @@ class SimpleLotteryConfigMock: LMConfigurator {
         "www.google.com"
     }
     
-    var gameRules: GameRulesType {
+    var gameRules: LMGameRulesType {
+          
         .DozenContest(
-            DozenContestRules(
+            LMDozenContestRules(
                 minDozens: Self.minDozens,
                 maxDozens: Self.maxDozens,
-                dozensTotalCount: Self.dozensTotalCount))
+                range: 1...50))
     }
     
-    var extraGameRules: GameRulesType? {
+    var extraGameRules: LMGameRulesType? {
         .DozenContest(
-            DozenContestRules(
+            LMDozenContestRules(
                 minDozens: Self.minDozensExtra,
                 maxDozens: Self.maxDozensExtra,
-                dozensTotalCount: Self.dozensExtraTotalCount))
+                range: 1...6))
     }
     
     var teimosinha: [Int] = [1]

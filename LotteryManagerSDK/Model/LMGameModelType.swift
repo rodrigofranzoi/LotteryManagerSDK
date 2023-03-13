@@ -28,14 +28,16 @@ public struct LMGameModel: LMGameModelType {
         self.id = try container.decode(String.self, forKey: .id)
     }
     
-    public func getDozens() -> [String] {
+    public func getDozens() -> [[String]] {
         switch type {
         case .extraDozen(let extraDozen):
-            return extraDozen.dozens
+            return [extraDozen.dozens]
         case .normal(let normal):
-            return normal.dozens
+            return [normal.dozens]
         case .extraGame(let extraGame):
-            return extraGame.dozens
+            return [extraGame.dozens]
+        case .multipleGame(let multipleGame):
+            return multipleGame.dozens
         }
     }
     
@@ -43,7 +45,7 @@ public struct LMGameModel: LMGameModelType {
         switch type {
         case .extraDozen(let extraDozen):
             return extraDozen.extraDozen
-        case .normal, .extraGame:
+        case .normal, .extraGame, .multipleGame:
             return nil
         }
     }
@@ -52,7 +54,7 @@ public struct LMGameModel: LMGameModelType {
         switch type {
         case .extraGame(let extraGame):
             return extraGame.extraValue
-        case .normal, .extraDozen:
+        case .normal, .extraDozen, .multipleGame:
             return nil
         }
     }

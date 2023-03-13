@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E754052553B337813A92026 /* Pods_LotteryManagerSDK_LotteryManagerSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605EB23EA6A6B7473C5AF630 /* Pods_LotteryManagerSDK_LotteryManagerSDKTests.framework */; };
 		C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */; };
+		C2943D4829BF6D4F00FD5D64 /* LMMultipleGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */; };
 		C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */; };
 		C2C8CE95297B1FBE006413DB /* LotteryManagerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */; };
 		C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE99297B1FBE006413DB /* LotteryManagerSDKTests.swift */; };
@@ -62,6 +63,7 @@
 		891DCABD30BC09FD8DFA9CD8 /* Pods-LotteryManagerSDK-LotteryManagerSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotteryManagerSDK-LotteryManagerSDKTests.release.xcconfig"; path = "Target Support Files/Pods-LotteryManagerSDK-LotteryManagerSDKTests/Pods-LotteryManagerSDK-LotteryManagerSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9ED3802C38750E10EE42FAF7 /* Pods-LotteryManagerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotteryManagerSDK.debug.xcconfig"; path = "Target Support Files/Pods-LotteryManagerSDK/Pods-LotteryManagerSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLotteryMock.swift; sourceTree = "<group>"; };
+		C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMMultipleGameType.swift; sourceTree = "<group>"; };
 		C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LotteryManagerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C8CE8D297B1FBE006413DB /* LotteryManagerSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryManagerSDK.h; sourceTree = "<group>"; };
 		C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LotteryManagerSDK.docc; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				C2C8CEA7297B1FF4006413DB /* LMExtraDozenGame.swift */,
 				C2C8CEA8297B1FF4006413DB /* LMExtraValueGame.swift */,
 				C2C8CEA9297B1FF4006413DB /* LMNormalGame.swift */,
+				C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2943D4829BF6D4F00FD5D64 /* LMMultipleGameType.swift in Sources */,
 				C2C8CED9297B1FF4006413DB /* LMRulesProtocol.swift in Sources */,
 				C2C8CEE9297B1FF4006413DB /* LMContestAPIProvider.swift in Sources */,
 				C2C8CEDB297B1FF4006413DB /* LMCoreFileProvider.swift in Sources */,
