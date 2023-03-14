@@ -39,26 +39,23 @@ final class LotteryManagerSDKTests: XCTestCase {
     }
     
     func testValidForm() throws {
-        let form = LMFormMock(dozens: ["01", "12", "40", "42", "45", "60"], teimosinha: 1, number: 100, isRecurrent: false)
-        let form1 = LMFormMock(dozens: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"], teimosinha: 1, number: 100, isRecurrent: false)
+        let path = Bundle(for: LotteryManagerSDKTests.self).path(forResource: "ValidForms", ofType: "json")!
+        let forms: [LMFormMock] = loadFile(named: path)
         let sut = SimpleLotteryConfigurator()
         
-        XCTAssertTrue(sut.isValid(form: form))
-        XCTAssertTrue(sut.isValid(form: form1))
+        for form in forms {
+            XCTAssertTrue(sut.isValid(form: form))
+        }
     }
     
     func testInvalidForm() throws {
-        let form1 = LMFormMock(dozens: ["19", "12", "40", "42", "45"], teimosinha: 1, number: 100, isRecurrent: false)
-        let form2 = LMFormMock(dozens: ["19", "12", "40", "42", "50", "90"], teimosinha: 1, number: 100, isRecurrent: false)
-        let form3 = LMFormMock(dozens: ["00", "12", "40", "42", "50", "51"], teimosinha: 1, number: 100, isRecurrent: false)
-        let form4 = LMFormMock(dozens: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16"], teimosinha: 1, number: 100, isRecurrent: false)
-        
+        let path = Bundle(for: LotteryManagerSDKTests.self).path(forResource: "InvalidForms", ofType: "json")!
+        let forms: [LMFormMock] = loadFile(named: path)
         let sut = SimpleLotteryConfigurator()
         
-        XCTAssertFalse(sut.isValid(form: form1))
-        XCTAssertFalse(sut.isValid(form: form2))
-        XCTAssertFalse(sut.isValid(form: form3))
-        XCTAssertFalse(sut.isValid(form: form4))
+        for form in forms {
+            XCTAssertFalse(sut.isValid(form: form))
+        }
     }
     
     func makeListLMGameType() -> [LMGameType] {

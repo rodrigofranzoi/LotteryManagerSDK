@@ -11,6 +11,9 @@
 		C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */; };
 		C2943D4829BF6D4F00FD5D64 /* LMMultipleGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */; };
 		C2943D4A29BF836400FD5D64 /* LMFormMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4929BF836400FD5D64 /* LMFormMock.swift */; };
+		C2943D4C29BFC33000FD5D64 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4B29BFC33000FD5D64 /* Helpers.swift */; };
+		C2943D4E29BFC57E00FD5D64 /* InvalidForms.json in Resources */ = {isa = PBXBuildFile; fileRef = C2943D4D29BFC57E00FD5D64 /* InvalidForms.json */; };
+		C2943D5229C0786E00FD5D64 /* ValidForms.json in Resources */ = {isa = PBXBuildFile; fileRef = C2943D5129C0786E00FD5D64 /* ValidForms.json */; };
 		C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */; };
 		C2C8CE95297B1FBE006413DB /* LotteryManagerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */; };
 		C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE99297B1FBE006413DB /* LotteryManagerSDKTests.swift */; };
@@ -66,6 +69,9 @@
 		C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLotteryMock.swift; sourceTree = "<group>"; };
 		C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMMultipleGameType.swift; sourceTree = "<group>"; };
 		C2943D4929BF836400FD5D64 /* LMFormMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMFormMock.swift; sourceTree = "<group>"; };
+		C2943D4B29BFC33000FD5D64 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C2943D4D29BFC57E00FD5D64 /* InvalidForms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidForms.json; sourceTree = "<group>"; };
+		C2943D5129C0786E00FD5D64 /* ValidForms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidForms.json; sourceTree = "<group>"; };
 		C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LotteryManagerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C8CE8D297B1FBE006413DB /* LotteryManagerSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryManagerSDK.h; sourceTree = "<group>"; };
 		C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LotteryManagerSDK.docc; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 			children = (
 				C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */,
 				C2943D4929BF836400FD5D64 /* LMFormMock.swift */,
+				C2943D4B29BFC33000FD5D64 /* Helpers.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 		C2C8CE98297B1FBE006413DB /* LotteryManagerSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				C2943D5129C0786E00FD5D64 /* ValidForms.json */,
+				C2943D4D29BFC57E00FD5D64 /* InvalidForms.json */,
 				C27EA696297B347000CC9453 /* Mocks */,
 				C2C8CE99297B1FBE006413DB /* LotteryManagerSDKTests.swift */,
 			);
@@ -408,6 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2943D5229C0786E00FD5D64 /* ValidForms.json in Resources */,
+				C2943D4E29BFC57E00FD5D64 /* InvalidForms.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +533,7 @@
 				C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */,
 				C2943D4A29BF836400FD5D64 /* LMFormMock.swift in Sources */,
 				C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */,
+				C2943D4C29BFC33000FD5D64 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

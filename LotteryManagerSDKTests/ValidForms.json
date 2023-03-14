@@ -1,0 +1,20 @@
+[
+    {
+        "dozens": ["01", "12", "40", "42", "45", "60"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens":  ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["01", "12", "40", "42", "45", "60"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+]
