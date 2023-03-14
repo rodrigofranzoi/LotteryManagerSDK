@@ -10,28 +10,71 @@ import XCTest
 
 final class LotteryManagerSDKTests: XCTestCase {
     
-    let sut = LMGameModel(id: "simpleId", type: .extraDozen(.init(id: "simpleId", dozens: ["1"], extraDozen: ["5"])))
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var configurator: LMConfigurator!
+    var simpleLottery: LMContestServiceType!
+    
+    override func setUp() {
+        super.setUp()
+        configurator = SimpleLotteryConfigurator()
+        simpleLottery = SimpleLotteryGame(concurso: 100,
+                                          data: "19/03/98",
+                                          proxData: "19/04/96",
+                                          rateioOn: false,
+                                          dezenas: ["19", "12", "40", "42", "45", "50"])
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        let mock = SimpleLotteryMock()
+    
+    func testGetPrize() throws {
         
-        XCTAssertEqual(mock.getPrice(for: sut.type), 3.0)
+        let sut = SimpleLotteryGame(concurso: 100,
+                                          data: "19/03/98",
+                                          proxData: "19/04/96",
+                                          rateioOn: false,
+                                          dezenas: ["19", "12", "40", "42", "45", "50"])
         
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let list = makeListLMGameType()
+        
+        for (index, game) in list.enumerated() {
+            XCTAssertEqual(sut.getPrizeFor(game: game), Double(index))
         }
     }
-
+    
+    func testValidForm() throws {
+        let path = Bundle(for: LotteryManagerSDKTests.self).path(forResource: "ValidForms", ofType: "json")!
+        let forms: [LMFormMock] = loadFile(named: path)
+        let sut = SimpleLotteryConfigurator()
+        
+        for form in forms {
+            XCTAssertTrue(sut.isValid(form: form))
+        }
+    }
+    
+    func testInvalidForm() throws {
+        let path = Bundle(for: LotteryManagerSDKTests.self).path(forResource: "InvalidForms", ofType: "json")!
+        let forms: [LMFormMock] = loadFile(named: path)
+        let sut = SimpleLotteryConfigurator()
+        
+        for form in forms {
+            XCTAssertFalse(sut.isValid(form: form))
+        }
+    }
+    
+    func makeListLMGameType() -> [LMGameType] {
+        let game6 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "42", "45", "50"]))
+        let game5 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "42", "45", "06"]))
+        let game4 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "42", "05", "06"]))
+        let game3 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "40", "04", "05", "06"]))
+        let game2 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "12", "03", "04", "05", "06"]))
+        let game1 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["19", "02", "03", "04", "05", "06"]))
+        let game0 = LMGameType.normal(.init(id: "simpleLotto",
+                                          dozens: ["01", "02", "03", "04", "05", "06"]))
+        return [game0, game1, game2, game3, game4, game5, game6]
+    }
 }
+
+

@@ -9,8 +9,8 @@
 import Foundation
 
 // Structure of a collection of games and its number
-struct LMContest: Codable {
-    let id: String
-    let number: String
-    var games: [LMGameModel]
+public struct LMContest: Codable {
+    public let id: String
+    public let number: String
+    public var games: [LMGameModel]
 }

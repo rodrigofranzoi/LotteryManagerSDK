@@ -12,20 +12,22 @@ public enum LMGameType: Codable {
     case normal(LMNormalGame)
     case extraDozen(LMExtraDozenGame)
     case extraGame(LMExtraValueGame)
+    case multipleGame(LMMultipleGame)
 }
 
-extension LMGameType {
+public extension LMGameType {
     private enum CodingKeys: String, CodingKey {
         case normal
         case extraDozen
         case extraGame
+        case multipleGame
     }
 
     enum GameTypeCodingError: Error {
         case decoding(String)
     }
 
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         if let value = try? values.decode(LMNormalGame.self, forKey: .normal) {
             self = .normal(value)
@@ -39,10 +41,14 @@ extension LMGameType {
             self = .extraGame(value)
             return
         }
+        if let value = try? values.decode(LMMultipleGame.self, forKey: .multipleGame) {
+            self = .multipleGame(value)
+            return
+        }
         throw GameTypeCodingError.decoding("Failed to decode game! \(dump(values))")
     }
 
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         switch self {
         case .normal(let game):
@@ -51,6 +57,8 @@ extension LMGameType {
             try container.encode(game, forKey: .extraGame)
         case .extraDozen(let game):
             try container.encode(game, forKey: .extraDozen)
+        case .multipleGame(let game):
+            try container.encode(game, forKey: .multipleGame)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LMContestFileManagerProtocol { 
+public protocol LMContestFileManagerProtocol {
     func addContest<T>(contest: T) where T: LMPersistenceType
     func getLastContest<T>(completion: @escaping (T?) -> Void) where T: LMPersistenceType
     func saveContests<T>(contests: [T]) where T: LMPersistenceType

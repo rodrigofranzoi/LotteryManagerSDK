@@ -14,12 +14,9 @@ Pod::Spec.new do |spec|
     spec.source = { :git => "https://github.com/rodrigofranzoi/LotteryManagerSDK.git", :tag => spec.version }
     spec.swift_version = '4.0'
   
-    # spec.ios.vendored_library = '*.a'
-    # spec.source_files = ['didcomm.swift', 'didcommFFI.h']
-  
     spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 i386' }
     spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 i386' }
-   # Specify where are your source files
+    
     spec.source_files = "LotteryManagerSDK/**/*.{swift}"
     spec.dependency 'ReactiveSwift', '~> 6.1'
 

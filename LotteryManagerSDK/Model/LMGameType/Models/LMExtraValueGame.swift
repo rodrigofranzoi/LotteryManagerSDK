@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol LMExtraValueGameType: Codable {
+public protocol LMExtraValueGameType: Codable {
     var id: String { get }
     var dozens: [String] { get }
     var extraValue: String { get }
 }
 
 public struct LMExtraValueGame: LMExtraValueGameType {
-    let id: String
-    let dozens: [String]
-    let extraValue: String
+    public let id: String
+    public let dozens: [String]
+    public let extraValue: String
     
     public init(id: String, dozens: [String], extraValue: String) {
         self.id = id

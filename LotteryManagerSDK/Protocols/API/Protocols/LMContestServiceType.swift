@@ -19,7 +19,7 @@ public protocol LMContestServiceType: LMPersistenceType {
     func getPrizeFor(games: [LMGameType]) -> Double
 }
 
-extension LMContestServiceType {
+public extension LMContestServiceType {
     func getPrizeFor(games: [LMGameType]) -> Double {
         var total: Double = 0.0
         games.forEach { total += getPrizeFor(game: $0) }

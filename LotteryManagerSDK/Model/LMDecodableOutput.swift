@@ -7,4 +7,4 @@
 
 import Foundation
 
-public typealias DecodableOutput = Codable
+public typealias LMDecodableOutput = Codable

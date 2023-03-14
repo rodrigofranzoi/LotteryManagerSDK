@@ -9,9 +9,9 @@
 import Foundation
 
 // Structure of a collection of games that is played every game
-struct LMRecurrentDataModel: Codable {
-    let id: String
-    var games: [LMGameModel]
+public struct LMRecurrentDataModel: Codable {
+    public let id: String
+    public var games: [LMGameModel]
     
     public init(id: String, games: [LMGameModel]) {
         self.id = id

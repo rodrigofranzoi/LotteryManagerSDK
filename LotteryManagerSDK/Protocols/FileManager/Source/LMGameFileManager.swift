@@ -9,7 +9,7 @@
 import Foundation
 import ReactiveSwift
 
-protocol LMGameFileManagerType {
+public protocol LMGameFileManagerType {
     var apiProtocol: LMSourceAPIType { get }
     var fileProvider: LMFileProvider { get }
     var idProvider: LMKeyGeneratorProtocol { get }
@@ -24,11 +24,11 @@ protocol LMGameFileManagerType {
     func recurrentGameModel() -> MutableProperty<LMRecurrentDataModel>
 }
 
-class LMGameFileManager: LMGameFileManagerType {
+public class LMGameFileManager: LMGameFileManagerType {
     
-    internal let apiProtocol: LMSourceAPIType
-    internal let idProvider: LMKeyGeneratorProtocol
-    internal let fileProvider: LMFileProvider
+    public let apiProtocol: LMSourceAPIType
+    public let idProvider: LMKeyGeneratorProtocol
+    public let fileProvider: LMFileProvider
     
     private var recurrentId: String { apiProtocol.name + "-recurrent-games.json" }
     private var normalId: String { apiProtocol.name + "-games.json" }
@@ -36,7 +36,7 @@ class LMGameFileManager: LMGameFileManagerType {
     private var uniqueGame: MutableProperty<LMUniqueGameDataModel>
     private var recurrentGame: MutableProperty<LMRecurrentDataModel>
     
-    init(apiProtocol: LMSourceAPIType,
+    public init(apiProtocol: LMSourceAPIType,
          fileProvider: LMFileProvider = LMCoreFileProvider(),
          idProvider: LMKeyGeneratorProtocol = LMKeyGenerator()) {
         self.idProvider = idProvider
@@ -60,15 +60,15 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    func uniqueGameModel() -> MutableProperty<LMUniqueGameDataModel> {
+    public func uniqueGameModel() -> MutableProperty<LMUniqueGameDataModel> {
         uniqueGame
     }
     
-    func recurrentGameModel() -> MutableProperty<LMRecurrentDataModel> {
+    public func recurrentGameModel() -> MutableProperty<LMRecurrentDataModel> {
         recurrentGame
     }
     
-    func addGame(gameNumber: String, game: LMGameModel) {
+    public func addGame(gameNumber: String, game: LMGameModel) {
         var newGameObj = self.uniqueGame.value
         if let index = newGameObj.contests.firstIndex(where: { $0.number == gameNumber }) {
             var gamesList = newGameObj.contests[index]
@@ -85,7 +85,7 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    func removeGame(gameNumber: String, game: LMGameModel) {
+    public func removeGame(gameNumber: String, game: LMGameModel) {
         var newGameObj =  self.uniqueGame.value
         if let indexContest = newGameObj.contests.firstIndex(where: { $0.number == gameNumber }) {
             if let indexGame = newGameObj.contests[indexContest].games.firstIndex(where: { $0.id == game.id }) {
@@ -98,7 +98,7 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    func editGame(gameNumber: String, game: LMGameModel, newGameNumber: String, newGame: LMGameModel) {
+    public func editGame(gameNumber: String, game: LMGameModel, newGameNumber: String, newGame: LMGameModel) {
         
         if gameNumber != newGameNumber {
             var newGameObj =  self.uniqueGame.value
@@ -123,13 +123,13 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
 
-    func addRecurrent(game: LMGameModel) {
+    public func addRecurrent(game: LMGameModel) {
         var newGameObj = self.recurrentGame.value
         newGameObj.games.append(game)
         self.recurrentGame.swap(newGameObj)
     }
     
-    func removeRecurrent(game: LMGameModel) {
+    public func removeRecurrent(game: LMGameModel) {
         var newGameObj = self.recurrentGame.value
         if let indexGame = newGameObj.games.firstIndex(where: { $0.id == game.id }) {
             newGameObj.games.remove(at: indexGame)
@@ -137,7 +137,7 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    func editRecurrent(game: LMGameModel, newGame: LMGameModel) {
+    public func editRecurrent(game: LMGameModel, newGame: LMGameModel) {
         var newGameObj = self.recurrentGame.value
         if let indexGame = newGameObj.games.firstIndex(where: { $0.id == game.id }) {
             newGameObj.games[indexGame] = newGame
@@ -145,8 +145,6 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    // MARK: Just for init
-    // MARK: This method should not be used, mark as private
     private func getRecurrent(completion: @escaping (LMRecurrentDataModel)->Void) {
         fileProvider.callForObject(url: recurrentId) { (status: LMFetchStatus<LMRecurrentDataModel>) in
             switch status {
@@ -159,8 +157,6 @@ class LMGameFileManager: LMGameFileManagerType {
         }
     }
     
-    // MARK: Just for init
-    // MARK: This method should not be used, mark as private
     private func getGames(completion: @escaping (LMUniqueGameDataModel)->Void) {
         fileProvider.callForObject(url: normalId) { (status: LMFetchStatus<LMUniqueGameDataModel>) in
             switch status {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LMExtraDozenType: Codable {
+public protocol LMExtraDozenType: Codable {
     var id: String { get }
     var dozens: [String] { get }
     var extraDozen: [String] { get }

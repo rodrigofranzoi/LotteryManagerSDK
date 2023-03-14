@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6E754052553B337813A92026 /* Pods_LotteryManagerSDK_LotteryManagerSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605EB23EA6A6B7473C5AF630 /* Pods_LotteryManagerSDK_LotteryManagerSDKTests.framework */; };
 		C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */; };
+		C2943D4829BF6D4F00FD5D64 /* LMMultipleGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */; };
+		C2943D4A29BF836400FD5D64 /* LMFormMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4929BF836400FD5D64 /* LMFormMock.swift */; };
+		C2943D4C29BFC33000FD5D64 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2943D4B29BFC33000FD5D64 /* Helpers.swift */; };
+		C2943D4E29BFC57E00FD5D64 /* InvalidForms.json in Resources */ = {isa = PBXBuildFile; fileRef = C2943D4D29BFC57E00FD5D64 /* InvalidForms.json */; };
+		C2943D5229C0786E00FD5D64 /* ValidForms.json in Resources */ = {isa = PBXBuildFile; fileRef = C2943D5129C0786E00FD5D64 /* ValidForms.json */; };
 		C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */; };
 		C2C8CE95297B1FBE006413DB /* LotteryManagerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */; };
 		C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CE99297B1FBE006413DB /* LotteryManagerSDKTests.swift */; };
@@ -29,21 +34,18 @@
 		C2C8CEDC297B1FF4006413DB /* LMLastGameDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEB9297B1FF4006413DB /* LMLastGameDefaults.swift */; };
 		C2C8CEDD297B1FF4006413DB /* LMGameFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBA297B1FF4006413DB /* LMGameFileManager.swift */; };
 		C2C8CEDE297B1FF4006413DB /* LMFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBC297B1FF4006413DB /* LMFileProvider.swift */; };
-		C2C8CEDF297B1FF4006413DB /* LMContestsFileManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBD297B1FF4006413DB /* LMContestsFileManagerType.swift */; };
 		C2C8CEE0297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBE297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift */; };
 		C2C8CEE1297B1FF4006413DB /* LMGameModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEBF297B1FF4006413DB /* LMGameModelProtocol.swift */; };
 		C2C8CEE2297B1FF4006413DB /* LMContestFileManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */; };
 		C2C8CEE3297B1FF4006413DB /* LMContestCachedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC3297B1FF4006413DB /* LMContestCachedService.swift */; };
 		C2C8CEE4297B1FF4006413DB /* LMFetchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC4297B1FF4006413DB /* LMFetchStatus.swift */; };
-		C2C8CEE5297B1FF4006413DB /* LMContestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC5297B1FF4006413DB /* LMContestService.swift */; };
-		C2C8CEE6297B1FF4006413DB /* LMContestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC6297B1FF4006413DB /* LMContestAPI.swift */; };
 		C2C8CEE7297B1FF4006413DB /* LMContestServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC8297B1FF4006413DB /* LMContestServiceProtocol.swift */; };
 		C2C8CEE8297B1FF4006413DB /* LMContestServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEC9297B1FF4006413DB /* LMContestServiceType.swift */; };
 		C2C8CEE9297B1FF4006413DB /* LMContestAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECA297B1FF4006413DB /* LMContestAPIProvider.swift */; };
 		C2C8CEEA297B1FF4006413DB /* LMContestCachedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECB297B1FF4006413DB /* LMContestCachedServiceProtocol.swift */; };
 		C2C8CEEB297B1FF4006413DB /* LMSourceAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECC297B1FF4006413DB /* LMSourceAPIType.swift */; };
 		C2C8CEEC297B1FF4006413DB /* LMKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CECD297B1FF4006413DB /* LMKeyGenerator.swift */; };
-		C2C8CEF3297B245A006413DB /* DecodableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEF2297B2459006413DB /* DecodableOutput.swift */; };
+		C2C8CEF3297B245A006413DB /* LMDecodableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8CEF2297B2459006413DB /* LMDecodableOutput.swift */; };
 		DD76EA3E1B8F1DC35D2C42BE /* Pods_LotteryManagerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B131FCAA88D9973632D5F /* Pods_LotteryManagerSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,11 @@
 		891DCABD30BC09FD8DFA9CD8 /* Pods-LotteryManagerSDK-LotteryManagerSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotteryManagerSDK-LotteryManagerSDKTests.release.xcconfig"; path = "Target Support Files/Pods-LotteryManagerSDK-LotteryManagerSDKTests/Pods-LotteryManagerSDK-LotteryManagerSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9ED3802C38750E10EE42FAF7 /* Pods-LotteryManagerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotteryManagerSDK.debug.xcconfig"; path = "Target Support Files/Pods-LotteryManagerSDK/Pods-LotteryManagerSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLotteryMock.swift; sourceTree = "<group>"; };
+		C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMMultipleGameType.swift; sourceTree = "<group>"; };
+		C2943D4929BF836400FD5D64 /* LMFormMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMFormMock.swift; sourceTree = "<group>"; };
+		C2943D4B29BFC33000FD5D64 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C2943D4D29BFC57E00FD5D64 /* InvalidForms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidForms.json; sourceTree = "<group>"; };
+		C2943D5129C0786E00FD5D64 /* ValidForms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidForms.json; sourceTree = "<group>"; };
 		C2C8CE8A297B1FBE006413DB /* LotteryManagerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LotteryManagerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C8CE8D297B1FBE006413DB /* LotteryManagerSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryManagerSDK.h; sourceTree = "<group>"; };
 		C2C8CE8E297B1FBE006413DB /* LotteryManagerSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LotteryManagerSDK.docc; sourceTree = "<group>"; };
@@ -86,21 +93,18 @@
 		C2C8CEB9297B1FF4006413DB /* LMLastGameDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLastGameDefaults.swift; sourceTree = "<group>"; };
 		C2C8CEBA297B1FF4006413DB /* LMGameFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMGameFileManager.swift; sourceTree = "<group>"; };
 		C2C8CEBC297B1FF4006413DB /* LMFileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFileProvider.swift; sourceTree = "<group>"; };
-		C2C8CEBD297B1FF4006413DB /* LMContestsFileManagerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestsFileManagerType.swift; sourceTree = "<group>"; };
 		C2C8CEBE297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLastGameDefaultsProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEBF297B1FF4006413DB /* LMGameModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMGameModelProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestFileManagerProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEC3297B1FF4006413DB /* LMContestCachedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestCachedService.swift; sourceTree = "<group>"; };
 		C2C8CEC4297B1FF4006413DB /* LMFetchStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFetchStatus.swift; sourceTree = "<group>"; };
-		C2C8CEC5297B1FF4006413DB /* LMContestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestService.swift; sourceTree = "<group>"; };
-		C2C8CEC6297B1FF4006413DB /* LMContestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestAPI.swift; sourceTree = "<group>"; };
 		C2C8CEC8297B1FF4006413DB /* LMContestServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestServiceProtocol.swift; sourceTree = "<group>"; };
 		C2C8CEC9297B1FF4006413DB /* LMContestServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestServiceType.swift; sourceTree = "<group>"; };
 		C2C8CECA297B1FF4006413DB /* LMContestAPIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestAPIProvider.swift; sourceTree = "<group>"; };
 		C2C8CECB297B1FF4006413DB /* LMContestCachedServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMContestCachedServiceProtocol.swift; sourceTree = "<group>"; };
 		C2C8CECC297B1FF4006413DB /* LMSourceAPIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMSourceAPIType.swift; sourceTree = "<group>"; };
 		C2C8CECD297B1FF4006413DB /* LMKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMKeyGenerator.swift; sourceTree = "<group>"; };
-		C2C8CEF2297B2459006413DB /* DecodableOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableOutput.swift; sourceTree = "<group>"; };
+		C2C8CEF2297B2459006413DB /* LMDecodableOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMDecodableOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				C27EA697297B348000CC9453 /* SimpleLotteryMock.swift */,
+				C2943D4929BF836400FD5D64 /* LMFormMock.swift */,
+				C2943D4B29BFC33000FD5D64 /* Helpers.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 		C2C8CE98297B1FBE006413DB /* LotteryManagerSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				C2943D5129C0786E00FD5D64 /* ValidForms.json */,
+				C2943D4D29BFC57E00FD5D64 /* InvalidForms.json */,
 				C27EA696297B347000CC9453 /* Mocks */,
 				C2C8CE99297B1FBE006413DB /* LotteryManagerSDKTests.swift */,
 			);
@@ -199,7 +207,7 @@
 				C2C8CEAD297B1FF4006413DB /* LMGameModelType.swift */,
 				C2C8CEAE297B1FF4006413DB /* LMPersistenceType.swift */,
 				C2C8CEAF297B1FF4006413DB /* LMContest.swift */,
-				C2C8CEF2297B2459006413DB /* DecodableOutput.swift */,
+				C2C8CEF2297B2459006413DB /* LMDecodableOutput.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 				C2C8CEA7297B1FF4006413DB /* LMExtraDozenGame.swift */,
 				C2C8CEA8297B1FF4006413DB /* LMExtraValueGame.swift */,
 				C2C8CEA9297B1FF4006413DB /* LMNormalGame.swift */,
+				C2943D4729BF6D4F00FD5D64 /* LMMultipleGameType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,7 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				C2C8CEBC297B1FF4006413DB /* LMFileProvider.swift */,
-				C2C8CEBD297B1FF4006413DB /* LMContestsFileManagerType.swift */,
 				C2C8CEBE297B1FF4006413DB /* LMLastGameDefaultsProtocol.swift */,
 				C2C8CEBF297B1FF4006413DB /* LMGameModelProtocol.swift */,
 				C2C8CEC0297B1FF4006413DB /* LMContestFileManagerProtocol.swift */,
@@ -291,8 +299,6 @@
 			children = (
 				C2C8CEC3297B1FF4006413DB /* LMContestCachedService.swift */,
 				C2C8CEC4297B1FF4006413DB /* LMFetchStatus.swift */,
-				C2C8CEC5297B1FF4006413DB /* LMContestService.swift */,
-				C2C8CEC6297B1FF4006413DB /* LMContestAPI.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -411,6 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2943D5229C0786E00FD5D64 /* ValidForms.json in Resources */,
+				C2943D4E29BFC57E00FD5D64 /* InvalidForms.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2943D4829BF6D4F00FD5D64 /* LMMultipleGameType.swift in Sources */,
 				C2C8CED9297B1FF4006413DB /* LMRulesProtocol.swift in Sources */,
 				C2C8CEE9297B1FF4006413DB /* LMContestAPIProvider.swift in Sources */,
 				C2C8CEDB297B1FF4006413DB /* LMCoreFileProvider.swift in Sources */,
@@ -505,16 +514,13 @@
 				C2C8CED3297B1FF4006413DB /* LMUniqueGameDataModel.swift in Sources */,
 				C2C8CED6297B1FF4006413DB /* LMContest.swift in Sources */,
 				C2C8CECF297B1FF4006413DB /* LMExtraValueGame.swift in Sources */,
-				C2C8CEF3297B245A006413DB /* DecodableOutput.swift in Sources */,
+				C2C8CEF3297B245A006413DB /* LMDecodableOutput.swift in Sources */,
 				C2C8CE8F297B1FBE006413DB /* LotteryManagerSDK.docc in Sources */,
 				C2C8CED4297B1FF4006413DB /* LMGameModelType.swift in Sources */,
-				C2C8CEDF297B1FF4006413DB /* LMContestsFileManagerType.swift in Sources */,
 				C2C8CEEC297B1FF4006413DB /* LMKeyGenerator.swift in Sources */,
-				C2C8CEE5297B1FF4006413DB /* LMContestService.swift in Sources */,
 				C2C8CEDD297B1FF4006413DB /* LMGameFileManager.swift in Sources */,
 				C2C8CED8297B1FF4006413DB /* LotteryConfigurator.swift in Sources */,
 				C2C8CEE8297B1FF4006413DB /* LMContestServiceType.swift in Sources */,
-				C2C8CEE6297B1FF4006413DB /* LMContestAPI.swift in Sources */,
 				C2C8CEEB297B1FF4006413DB /* LMSourceAPIType.swift in Sources */,
 				C2C8CED2297B1FF4006413DB /* LMRecurrentDataModel.swift in Sources */,
 			);
@@ -525,7 +531,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C8CE9A297B1FBE006413DB /* LotteryManagerSDKTests.swift in Sources */,
+				C2943D4A29BF836400FD5D64 /* LMFormMock.swift in Sources */,
 				C27EA698297B348000CC9453 /* SimpleLotteryMock.swift in Sources */,
+				C2943D4C29BFC33000FD5D64 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,9 +693,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoscroferneker.LotteryManagerSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Debug;
 		};
@@ -716,9 +727,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoscroferneker.LotteryManagerSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Release;
 		};
@@ -737,9 +751,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoscroferneker.LotteryManagerSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Debug;
 		};
@@ -758,9 +775,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoscroferneker.LotteryManagerSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
 			};
 			name = Release;
 		};

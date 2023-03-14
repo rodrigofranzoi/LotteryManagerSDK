@@ -10,8 +10,8 @@ import Foundation
 
 // This define the behaviour of the lottery
 public protocol LMRulesProtocol {
-    var gameRules: GameRulesType { get }
-    var extraGameRules: GameRulesType? { get }
+    var gameRules: LMGameRulesType { get }
+    var extraGameRules: LMGameRulesType? { get }
     var teimosinha: [Int] { get }
     var priceArray: [[Double]] { get }
     
@@ -27,23 +27,28 @@ public extension LMRulesProtocol {
     }
 }
 
-public protocol DozenContestRulesType {
+public protocol LMDozenContestRulesType {
     var minDozens: Int { get }
     var maxDozens: Int { get }
+    var range: ClosedRange<Int> { get }
     var dozensTotalCount: Int { get }
     func getFooterLabel() -> String
 }
 
 
-public struct DozenContestRules: DozenContestRulesType {
+public struct LMDozenContestRules: LMDozenContestRulesType {
     public var minDozens: Int
     public var maxDozens: Int
-    public var dozensTotalCount: Int
+    public var range: ClosedRange<Int>
     
-    public init(minDozens: Int, maxDozens: Int, dozensTotalCount: Int) {
+    public var dozensTotalCount: Int {
+        range.count
+    }
+    
+    public init(minDozens: Int, maxDozens: Int, range: ClosedRange<Int>) {
         self.minDozens = minDozens
         self.maxDozens = maxDozens
-        self.dozensTotalCount = dozensTotalCount
+        self.range = range
     }
     
     public func getFooterLabel() -> String {
@@ -55,8 +60,8 @@ public struct DozenContestRules: DozenContestRulesType {
     }
 }
 
-public enum GameRulesType {
-    case DozenContest(DozenContestRulesType)
+public enum LMGameRulesType {
+    case MultipleDozens([LMDozenContestRules])
+    case DozenContest(LMDozenContestRules)
     case SingleTicketContest
-    case None
 }

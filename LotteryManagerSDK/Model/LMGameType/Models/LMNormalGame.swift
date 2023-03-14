@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol LMNormalType: Codable {
+public protocol LMNormalType: Codable {
     var id: String { get }
     var dozens: [String] { get }
 }
 
 public struct LMNormalGame: LMNormalType {
-    let id: String
-    let dozens: [String]
+    public let id: String
+    public let dozens: [String]
     
     public init(id: String, dozens: [String]) {
         self.id = id

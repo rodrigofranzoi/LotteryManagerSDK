@@ -1,0 +1,64 @@
+[
+    {
+        "dozens": ["19", "12", "40", "42", "45"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["19", "12", "40", "42", "50", "90"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["00", "12", "40", "42", "50", "51"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16"],
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["19", "12", "40", "42", "50", "32"],
+        "teimosinha": 99,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["19", "12", "40", "42", "50", "32"],
+        "teimosinha": 0,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["19", "12", "40", "42", "50", "32"],
+        "teimosinha": 1,
+        "number": 100
+    },
+    {
+        "dozens": ["19", "12", "40", "42", "50", "32"],
+        "teimosinha": 1,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["19", "12", "40", "42", "50", "32"],
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "teimosinha": 1,
+        "number": 100,
+        "isRecurrent": false
+    },
+    {
+        "dozens": ["1", "2", "3", "4", "5", "6"],
+        "teimosinha": 99,
+        "number": 100,
+        "isRecurrent": false
+    },
+]

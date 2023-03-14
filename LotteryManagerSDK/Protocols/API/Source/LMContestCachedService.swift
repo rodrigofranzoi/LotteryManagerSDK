@@ -8,13 +8,13 @@
 
 import Foundation
 
-class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: DecodableOutput & LMContestServiceType {
+public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: LMDecodableOutput & LMContestServiceType {
 
-    var mainSource: LMContestServiceProtocol
-    var cache: LMContestFileManagerProtocol
-    var lastGameDefaults: LMLastGameDefaultsProtocol
+    public var mainSource: LMContestServiceProtocol
+    public var cache: LMContestFileManagerProtocol
+    public var lastGameDefaults: LMLastGameDefaultsProtocol
     
-    init(mainSource: LMContestServiceProtocol,
+    public init(mainSource: LMContestServiceProtocol,
          cache: LMContestFileManagerProtocol,
          lastGameDefaults: LMLastGameDefaultsProtocol) {
         self.mainSource = mainSource
@@ -22,7 +22,7 @@ class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: Decodab
         self.lastGameDefaults = lastGameDefaults
     }
 
-    func fetchLottery<T>(contestNumber: Int? = nil, completion: @escaping (LMFetchStatus<T>)->Void) where T: DecodableOutput & LMContestServiceType {
+    public func fetchLottery<T>(contestNumber: Int? = nil, completion: @escaping (LMFetchStatus<T>)->Void) where T: LMDecodableOutput & LMContestServiceType {
         cache.getContests { [weak self] (cachedContests: [T]) in
             if let contestNumber = contestNumber,
                let game = cachedContests.first(where: { $0.contestNumber == contestNumber}),
@@ -39,7 +39,7 @@ class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: Decodab
                     if contestNumber == nil {
                         self?.lastGameDefaults.lastGameNumber = game.contestNumber
                     } else if let lastGameNumber = self?.lastGameDefaults.lastGameNumber,
-                              lastGameNumber > game.contestNumber {
+                              lastGameNumber < game.contestNumber {
                         self?.lastGameDefaults.lastGameNumber = game.contestNumber
                     }
                     return
@@ -62,12 +62,12 @@ class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: Decodab
         }
     }
  
-    func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: DecodableOutput & LMContestServiceType{
+    public func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: LMDecodableOutput & LMContestServiceType {
         let group = DispatchGroup()
         var games: [LMFetchStatus<T>] =  Array(repeating: .other(.api), count: contests.count)
         for (index, number) in contests.enumerated() {
             group.enter()
-            fetchLottery(contestNumber: number)  { (status: LMFetchStatus<T>) in
+            fetchLottery(contestNumber: number) { (status: LMFetchStatus<T>) in
                 group.leave()
                 // Avoid return duplicates
                 games[index] = status

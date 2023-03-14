@@ -1,11 +1,12 @@
 import Foundation
 
-protocol LMKeyGeneratorProtocol {
+public protocol LMKeyGeneratorProtocol {
     func getRandom() -> String
 }
 
-class LMKeyGenerator: LMKeyGeneratorProtocol {
-    func getRandom() -> String{
+public class LMKeyGenerator: LMKeyGeneratorProtocol {
+    public init() { }
+    public func getRandom() -> String{
         return UUID().uuidString.lowercased()
     }
 }
