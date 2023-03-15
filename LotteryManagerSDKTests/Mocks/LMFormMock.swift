@@ -9,7 +9,7 @@
 import Foundation
 import LotteryManagerSDK
 
-struct LMFormMock: LotteryManagerSDK.GameFormModelType {
+struct LMFormMock: LotteryManagerSDK.GameFormModelType, Codable {
     var dozens: [String]?
     var extraDozens: [String]?
     var multipleDozens: [[String]]?
