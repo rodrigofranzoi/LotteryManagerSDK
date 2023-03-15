@@ -1,0 +1,44 @@
+{
+   "nome":"MEGA-SENA",
+   "concurso":2573,
+   "data":"19/04/96",
+   "data_concurso_milliseconds":1678762800000,
+   "local_realizacao":"SÃO PAULO, SP",
+   "rateioOn":false,
+   "acumulou":true,
+   "valor_acumulado":13642781.39,
+   "dezenas": ["19", "12", "40", "42", "45", "50"],
+   "premiacao":[
+      {
+         "acertos":6,
+         "nome":"Sena",
+         "quantidade_ganhadores":0,
+         "valor_total":0
+      },
+      {
+         "acertos":5,
+         "nome":"Quina",
+         "quantidade_ganhadores":37,
+         "valor_total":58420.68
+      },
+      {
+         "acertos":4,
+         "nome":"Quadra",
+         "quantidade_ganhadores":2718,
+         "valor_total":1136.11
+      }
+   ],
+   "local_ganhadores":[
+      
+   ],
+   "arrecadacao_total":37491048,
+   "concurso_proximo":2574,
+   "proxData":"19/03/98",
+   "data_proximo_concurso_milliseconds":1678935600000,
+   "valor_estimado_proximo_concurso":18000000,
+   "valor_final_concurso_acumulado":0,
+   "numero_final_concurso_acumulado":5,
+   "valor_acumulado_especial":24117737.69,
+   "nome_acumulado_especial":"Mega da Virada",
+   "concurso_especial":false
+}

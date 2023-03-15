@@ -11,7 +11,7 @@ import Foundation
 // This define the behaviour of the lottery
 public protocol LMRulesProtocol {
     var gameRules: LMGameRulesType { get }
-    var extraGameRules: LMGameRulesType? { get }
+    var extraValueRules: LMGameRulesType? { get }
     var teimosinha: [Int] { get }
     var priceArray: [[Double]] { get }
     
