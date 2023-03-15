@@ -44,7 +44,7 @@ extension LMGameModelProtocol {
             guard let _ = form.extraInput else { return false }
         }
         
-        switch self.extraGameRules {
+        switch self.extraValueRules {
         case .DozenContest(let rules):
             guard let dozens = form.extraDozens else { return false }
             if rules.minDozens > dozens.count { return false }

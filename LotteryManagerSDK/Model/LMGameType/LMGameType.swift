@@ -11,7 +11,7 @@ import Foundation
 public enum LMGameType: Codable {
     case normal(LMNormalGame)
     case extraDozen(LMExtraDozenGame)
-    case extraGame(LMExtraValueGame)
+    case extraValue(LMExtraValueGame)
     case multipleGame(LMMultipleGame)
 }
 
@@ -19,7 +19,7 @@ public extension LMGameType {
     private enum CodingKeys: String, CodingKey {
         case normal
         case extraDozen
-        case extraGame
+        case extraValue
         case multipleGame
     }
 
@@ -37,8 +37,8 @@ public extension LMGameType {
             self = .extraDozen(value)
             return
         }
-        if let value = try? values.decode(LMExtraValueGame.self, forKey: .extraGame) {
-            self = .extraGame(value)
+        if let value = try? values.decode(LMExtraValueGame.self, forKey: .extraValue) {
+            self = .extraValue(value)
             return
         }
         if let value = try? values.decode(LMMultipleGame.self, forKey: .multipleGame) {
@@ -53,8 +53,8 @@ public extension LMGameType {
         switch self {
         case .normal(let game):
             try container.encode(game, forKey: .normal)
-        case .extraGame(let game):
-            try container.encode(game, forKey: .extraGame)
+        case .extraValue(let game):
+            try container.encode(game, forKey: .extraValue)
         case .extraDozen(let game):
             try container.encode(game, forKey: .extraDozen)
         case .multipleGame(let game):
