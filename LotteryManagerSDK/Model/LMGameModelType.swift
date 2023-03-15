@@ -34,8 +34,8 @@ public struct LMGameModel: LMGameModelType {
             return [extraDozen.dozens]
         case .normal(let normal):
             return [normal.dozens]
-        case .extraGame(let extraGame):
-            return [extraGame.dozens]
+        case .extraValue(let extraValue):
+            return [extraValue.dozens]
         case .multipleGame(let multipleGame):
             return multipleGame.dozens
         }
@@ -43,17 +43,17 @@ public struct LMGameModel: LMGameModelType {
     
     public func getExtraDozens() -> [String]? {
         switch type {
-        case .extraDozen(let extraDozen):
-            return extraDozen.extraDozen
-        case .normal, .extraGame, .multipleGame:
+        case .extraDozen(let game):
+            return game.extraDozen
+        case .normal, .extraValue, .multipleGame:
             return nil
         }
     }
     
     public func getExtraValue() -> String? {
         switch type {
-        case .extraGame(let extraGame):
-            return extraGame.extraValue
+        case .extraValue(let game):
+            return game.extraValue
         case .normal, .extraDozen, .multipleGame:
             return nil
         }

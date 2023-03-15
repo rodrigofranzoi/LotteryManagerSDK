@@ -1,0 +1,92 @@
+{
+   "nome":"+MILIONÁRIA",
+   "concurso":42,
+   "data":"2023-03-11T00:00:00-03:00",
+   "data_concurso_milliseconds":1678503600000,
+   "local_realizacao":"SAO PAULO, SP",
+   "rateioOn":false,
+   "acumulou":true,
+   "dezenas":[
+      "02",
+      "09",
+      "14",
+      "25",
+      "33",
+      "44"
+   ],
+   "trevos":[
+      3,
+      6
+   ],
+   "premiacao":[
+      {
+         "faixa":1,
+         "nome":"6 acertos + 2 trevos",
+         "quantidade_ganhadores":0,
+         "valor_total":0
+      },
+      {
+         "faixa":2,
+         "nome":"6 acertos + 1 ou nenhum trevo",
+         "quantidade_ganhadores":0,
+         "valor_total":0
+      },
+      {
+         "faixa":3,
+         "nome":"5 acertos + 2 trevos",
+         "quantidade_ganhadores":2,
+         "valor_total":152707.78
+      },
+      {
+         "faixa":4,
+         "nome":"5 acertos + 1 ou nenhum trevo",
+         "quantidade_ganhadores":41,
+         "valor_total":3310.74
+      },
+      {
+         "faixa":5,
+         "nome":"4 acertos + 2 trevos",
+         "quantidade_ganhadores":94,
+         "valor_total":1547.19
+      },
+      {
+         "faixa":6,
+         "nome":"4 acertos + 1 ou nenhum trevo",
+         "quantidade_ganhadores":1433,
+         "valor_total":101.49
+      },
+      {
+         "faixa":7,
+         "nome":"3 acertos + 2 trevos",
+         "quantidade_ganhadores":1569,
+         "valor_total":50
+      },
+      {
+         "faixa":8,
+         "nome":"3 acertos + 1 trevo",
+         "quantidade_ganhadores":13907,
+         "valor_total":24
+      },
+      {
+         "faixa":9,
+         "nome":"2 acertos + 2 trevos",
+         "quantidade_ganhadores":11732,
+         "valor_total":12
+      },
+      {
+         "faixa":10,
+         "nome":"2 acertos + 1 trevo",
+         "quantidade_ganhadores":102216,
+         "valor_total":6
+      }
+   ],
+   "local_ganhadores":[
+      
+   ],
+   "arrecadacao_total":8717856,
+   "concurso_proximo":43,
+   "dataProx":"2023-03-18T00:00:00-03:00",
+   "data_proximo_concurso_milliseconds":1679108400000,
+   "valor_estimado_proximo_concurso":32000000,
+   "concurso_especial":false
+}

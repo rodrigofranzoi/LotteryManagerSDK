@@ -1,0 +1,60 @@
+{
+   "nome":"SUPER SETE",
+   "concurso":369,
+   "data":"2023-03-14T00:00:00-03:00",
+   "datamil":1678762800000,
+   "local_realizacao":"SAO PAULO, SP",
+   "rateioOn":false,
+   "acumulou":true,
+   "valor_acumulado":2816350.28,
+   "dezenas":[
+      "2",
+      "7",
+      "0",
+      "6",
+      "2",
+      "5",
+      "2"
+   ],
+   "premiacao":[
+      {
+         "acertos":7,
+         "nome":"7 acertos",
+         "quantidade_ganhadores":0,
+         "valor_total":0
+      },
+      {
+         "acertos":6,
+         "nome":"6 acertos",
+         "quantidade_ganhadores":0,
+         "valor_total":0
+      },
+      {
+         "acertos":5,
+         "nome":"5 acertos",
+         "quantidade_ganhadores":50,
+         "valor_total":986.71
+      },
+      {
+         "acertos":4,
+         "nome":"4 acertos",
+         "quantidade_ganhadores":915,
+         "valor_total":53.91
+      },
+      {
+         "acertos":3,
+         "nome":"3 acertos",
+         "quantidade_ganhadores":8222,
+         "valor_total":5
+      }
+   ],
+   "local_ganhadores":[
+      
+   ],
+   "arrecadacao_total":853555,
+   "concurso_proximo":370,
+   "proxData":"2023-03-15T00:00:00-03:00",
+   "data_proximo_concurso_milliseconds":1678849200000,
+   "valor_estimado_proximo_concurso":3000000,
+   "concurso_especial":false
+}
