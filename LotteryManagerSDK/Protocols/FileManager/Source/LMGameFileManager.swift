@@ -110,7 +110,19 @@ public class LMGameFileManager: LMGameFileManagerType {
                     }
                 }
             }
-            addGame(gameNumber: newGameNumber, game: game)
+            if let index = newGameObj.contests.firstIndex(where: { $0.number == newGameNumber }) {
+                var gamesList = newGameObj.contests[index]
+                gamesList.games.append(game)
+                newGameObj.contests[index] = gamesList
+                self.uniqueGame.swap(newGameObj)
+            } else {
+                let contest = LMContest(id: self.idProvider.getRandom(),
+                                      number: newGameNumber,
+                                      games: [game])
+                newGameObj.contests.append(contest)
+                newGameObj.contests = newGameObj.contests.sorted(by: { $0.number.localizedStandardCompare($1.number) == .orderedDescending })
+                self.uniqueGame.swap(newGameObj)
+            }
             return
         }
         
