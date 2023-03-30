@@ -57,4 +57,9 @@ public class LMCoreFileProvider: LMFileProvider {
             onFailure?()
         }
     }
+
+    public func deleteFile(named url: String) {
+        let path = urlBase.appendingPathComponent(url)
+        try? FileManager.default.removeItem(atPath: path)
+    }
 }
