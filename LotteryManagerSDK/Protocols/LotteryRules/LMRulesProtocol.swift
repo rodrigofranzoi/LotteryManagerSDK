@@ -32,7 +32,11 @@ public protocol LMDozenContestRulesType {
     var maxDozens: Int { get }
     var range: ClosedRange<Int> { get }
     var dozensTotalCount: Int { get }
-    func getFooterLabel() -> String
+}
+
+public protocol LMSingleTicketRulesType {
+    var displayList: [String] { get }
+    var list: [String] { get }
 }
 
 
@@ -50,18 +54,20 @@ public struct LMDozenContestRules: LMDozenContestRulesType {
         self.maxDozens = maxDozens
         self.range = range
     }
+}
+
+public struct LMSingleTicketRules: LMSingleTicketRulesType {
+    public var displayList: [String]
+    public var list: [String]
     
-    public func getFooterLabel() -> String {
-        if minDozens == maxDozens {
-            return "Escolha \(minDozens) números."
-        } else {
-            return "Escolha de \(minDozens) a \(maxDozens) números."
-        }
+    public init(list: [String], displayList: [String]) {
+        self.list = list
+        self.displayList = displayList
     }
 }
 
 public enum LMGameRulesType {
     case MultipleDozens([LMDozenContestRules])
     case DozenContest(LMDozenContestRules)
-    case SingleTicketContest
+    case SingleTicketContest(LMSingleTicketRules)
 }
