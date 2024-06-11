@@ -10,7 +10,6 @@ import Foundation
 
 public enum LMFetchStatus<T> {
     case succeeded(T)
-//    case cached(T)
     case failed(Error)
     case other(LMOther)
     

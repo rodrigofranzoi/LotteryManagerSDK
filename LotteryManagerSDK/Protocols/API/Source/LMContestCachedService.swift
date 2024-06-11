@@ -8,30 +8,30 @@
 
 import Foundation
 
-public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: LMDecodableOutput & LMContestServiceType {
-
+public class LMContestCachedService: LMContestCachedServiceProtocol {
+    
     public var mainSource: LMContestServiceProtocol
     public var cache: LMContestFileManagerProtocol
     public var lastGameDefaults: LMLastGameDefaultsProtocol
     
     public init(mainSource: LMContestServiceProtocol,
-         cache: LMContestFileManagerProtocol,
-         lastGameDefaults: LMLastGameDefaultsProtocol) {
+                cache: LMContestFileManagerProtocol,
+                lastGameDefaults: LMLastGameDefaultsProtocol) {
         self.mainSource = mainSource
         self.cache = cache
         self.lastGameDefaults = lastGameDefaults
     }
-
-    public func fetchLottery<T>(contestNumber: Int? = nil, completion: @escaping (LMFetchStatus<T>)->Void) where T: LMDecodableOutput & LMContestServiceType {
-        cache.getContests { [weak self] (cachedContests: [T]) in
+    
+    public func fetchLottery<U>(contestNumber: Int? = nil, completion: @escaping (LMFetchStatus<U>) -> Void) where U: LMDecodableOutput & LMContestServiceType {
+        cache.getContests { [weak self] (cachedContests: [U]) in
             if let contestNumber = contestNumber,
-               let game = cachedContests.first(where: { $0.contestNumber == contestNumber}),
+               let game = cachedContests.first(where: { $0.contestNumber == contestNumber }),
                game.isCompleted {
                 completion(.succeeded(game))
                 return
             }
             
-            self?.mainSource.fetchLottery(contestNumber: contestNumber) { (status: LMFetchStatus<T>) in
+            self?.mainSource.fetchLottery(contestNumber: contestNumber) { (status: LMFetchStatus<U>) in
                 switch status {
                 case .succeeded(let game):
                     self?.cache.addContest(contest: game)
@@ -44,12 +44,16 @@ public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: 
                     }
                     return
                 default:
-                    if let contestNumber = contestNumber,
-                       let game = cachedContests.first(where: { $0.contestNumber == contestNumber}) {
-                        completion(.succeeded(game))
-                        return
+                    if let contestNumber = contestNumber {
+                        if let game = cachedContests.first(where: { $0.contestNumber == contestNumber }) {
+                            completion(.succeeded(game))
+                            return
+                        } else {
+                            completion(.other(.noFileFound))
+                            return
+                        }
                     } else {
-                        self?.cache.getLastContest { (contest: T?) in
+                        self?.cache.getLastContest { (contest: U?) in
                             guard let contest = contest else {
                                 completion(.other(.noFileFound))
                                 return
@@ -61,13 +65,13 @@ public class LMContestCachedService<T>: LMContestCachedServiceProtocol where T: 
             }
         }
     }
- 
-    public func fetchBundle<T>(contests: [Int], completion: @escaping ([LMFetchStatus<T>]) -> Void) where T: LMDecodableOutput & LMContestServiceType {
+    
+    public func fetchBundle<U>(contests: [Int], completion: @escaping ([LMFetchStatus<U>]) -> Void) where U: LMDecodableOutput & LMContestServiceType {
         let group = DispatchGroup()
-        var games: [LMFetchStatus<T>] =  Array(repeating: .other(.api), count: contests.count)
+        var games: [LMFetchStatus<U>] = Array(repeating: .other(.api), count: contests.count)
         for (index, number) in contests.enumerated() {
             group.enter()
-            fetchLottery(contestNumber: number) { (status: LMFetchStatus<T>) in
+            fetchLottery(contestNumber: number) { (status: LMFetchStatus<U>) in
                 group.leave()
                 // Avoid return duplicates
                 games[index] = status
